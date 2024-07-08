@@ -8,6 +8,7 @@ import { UnsafeBurnerWalletAdapter } from "@solana/wallet-adapter-wallets";
 import { clusterApiUrl } from "@solana/web3.js";
 import { useMemo } from "react";
 import RequestAirDrop from "./RequestAirDrop";
+import CheckBalance from "./CheckYourBalance";
 
 
 export default function CreateWallet() {
@@ -27,6 +28,7 @@ export default function CreateWallet() {
             <WalletMultiButton style={{marginBottom:30}} />
             <WalletDisconnectButton style={{marginBottom:30}} />
             <RequestAirDrop /> 
+            <CheckBalance />
           </WalletModalProvider>
         </WalletProvider>
       </ConnectionProvider>
