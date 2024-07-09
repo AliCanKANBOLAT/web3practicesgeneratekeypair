@@ -12,7 +12,7 @@ export default function RequestAirDrop() {
       if(publicKey) {
         setLoading(true); 
         try {
-          const signature = await connection.requestAirdrop(publicKey, 10 * LAMPORTS_PER_SOL)
+          const signature = await connection.requestAirdrop(publicKey, 5 * LAMPORTS_PER_SOL)
           const { blockhash, lastValidBlockHeight } = await connection.getLatestBlockhash();
           await connection.confirmTransaction({signature, blockhash, lastValidBlockHeight} )
         } catch (error) {

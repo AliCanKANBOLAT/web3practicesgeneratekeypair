@@ -9,6 +9,7 @@ import { clusterApiUrl } from "@solana/web3.js";
 import { useMemo } from "react";
 import RequestAirDrop from "./RequestAirDrop";
 import CheckBalance from "./CheckYourBalance";
+import CheckAnotherBalance from "./CheckBalanceAnotherPerson";
 
 
 export default function CreateWallet() {
@@ -29,6 +30,7 @@ export default function CreateWallet() {
             <WalletDisconnectButton style={{marginBottom:30}} />
             <RequestAirDrop /> 
             <CheckBalance />
+            <CheckAnotherBalance />
           </WalletModalProvider>
         </WalletProvider>
       </ConnectionProvider>
