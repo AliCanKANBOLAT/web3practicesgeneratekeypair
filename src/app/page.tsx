@@ -3,14 +3,22 @@
 import { WalletAdapterNetwork } from "@solana/wallet-adapter-base";
 import { ConnectionProvider, WalletProvider } from "@solana/wallet-adapter-react";
 import { WalletDisconnectButton, WalletModalProvider, WalletMultiButton } from "@solana/wallet-adapter-react-ui";
-import "@solana/wallet-adapter-react-ui/styles.css"
+import "@solana/wallet-adapter-react-ui/styles.css";
 import { UnsafeBurnerWalletAdapter } from "@solana/wallet-adapter-wallets";
 import { clusterApiUrl } from "@solana/web3.js";
 import { useMemo } from "react";
 import RequestAirDrop from "./RequestAirDrop";
 import CheckBalance from "./CheckYourBalance";
 import CheckAnotherBalance from "./CheckBalanceAnotherPerson";
+import SendSolTransaction from "./Transaction";
+// import bs58 from "bs58";
 
+
+//   const kp = bs58.decode(
+//     "2cwNbM38zXX8iPN6h9wWX93tJaHZoH9zNAJTKLAk21AJG9c33yabBrTnAwcURA5J4ktdfUtxyYZjkHva914wfbkD"
+//   );
+
+//     console.log("secret key decoded format : ",{kp})
 
 export default function CreateWallet() {
   const network = WalletAdapterNetwork.Devnet;
@@ -22,15 +30,16 @@ export default function CreateWallet() {
     [network],
   );
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center p-24">
-      <ConnectionProvider {...{endpoint}}  >
-        <WalletProvider {...{wallets}} autoConnect >
-          <WalletModalProvider >
-            <WalletMultiButton style={{marginBottom:30}} />
-            <WalletDisconnectButton style={{marginBottom:30}} />
-            <RequestAirDrop /> 
+    <main className="flex min-h-screen flex-col items-center justify-center p-24 bg-gradient-to-r from-yellow-500 to-red-500">
+      <ConnectionProvider {...{ endpoint }}>
+        <WalletProvider {...{ wallets }} autoConnect>
+          <WalletModalProvider>
+            <WalletMultiButton style={{ marginBottom: 30 }} />
+            <WalletDisconnectButton style={{ marginBottom: 30 }} />
+            <RequestAirDrop />
             <CheckBalance />
             <CheckAnotherBalance />
+            <SendSolTransaction />
           </WalletModalProvider>
         </WalletProvider>
       </ConnectionProvider>

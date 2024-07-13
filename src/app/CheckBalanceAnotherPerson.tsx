@@ -50,7 +50,7 @@ const CheckAnotherBalance: React.FC = () => {
             value={publicKeyInput}
             onChange={(e) => setPublicKeyInput(e.target.value)}
             placeholder="Enter Wallet Public Key"
-            className="mb-4 p-2 border border-gray-300 rounded"
+            className="mb-4 p-2 border border-gray-300 rounded text-black"
             required
           />
           <button
