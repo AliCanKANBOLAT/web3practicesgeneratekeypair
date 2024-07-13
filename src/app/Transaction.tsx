@@ -1,3 +1,4 @@
+//transcation.tsx
 import { useState, FormEvent } from "react";
 import { Transaction, SystemProgram, PublicKey, Connection, LAMPORTS_PER_SOL, Keypair, sendAndConfirmTransaction } from "@solana/web3.js";
 import bs58 from 'bs58';

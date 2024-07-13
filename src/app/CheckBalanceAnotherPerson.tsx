@@ -1,3 +1,4 @@
+//CHECKbALANCEaNOTHERpERSON.tsx
 import { useState, FormEvent } from "react";
 import { Connection, LAMPORTS_PER_SOL, PublicKey } from "@solana/web3.js";
 
